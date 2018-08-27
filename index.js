@@ -1,5 +1,10 @@
 'use strict';
 
+// 1.) Counting sheep 
+//   Input: A number greater than zero (ex: 3)
+//   Output: if number is 0, the phrase "no more sheep are left" is returned
+//   recursive input: the number decremented by 1
+//   recursive output: number - "Another sheep jump over the fence"
 
 function countingSheep (numberOfSheep){
 
@@ -14,6 +19,14 @@ function countingSheep (numberOfSheep){
 }
 
 //countingSheep(10);
+
+
+// 2.) Array Double
+//   Input: array
+//   Output: array with numbers doubled
+//   recursive input: array with first index's number needing to be doubled
+//   recursive output: an array with some of the doubled values and the next value from the original array to be doubled
+    
 
 
 function arrayDouble (array){
@@ -31,6 +44,12 @@ let arr = [1,2,3];
 // console.log(arrayDouble(arr));
 
 
+// 3.) Reverse String
+//   Input: string
+//   Output: string with reversed characters
+//   recursive input: string with sliced characters, string of partially reversed characters
+  
+
 function reverseString (str, revStr =''){
   if (!str.length){
     return '';
@@ -45,9 +64,16 @@ function reverseString (str, revStr =''){
 
 }
 
-let string = 'make happy time', revStr='';
+// reverseString('make happy time', '');
 
-// reverseString(string, revStr);
+
+
+
+// 4.) nth Triangular Number
+//   Input: number representing the number of stars on the bottom row
+//   Output: diagram of a triangle of stars with n dots on the side
+//   recursive input: unfinished array of rows with stars, number incremented until the it equals the original input number
+//   recursive output: array of rows with stars
 
 
 function nthTriangularNumber (nth, row){
@@ -83,6 +109,14 @@ function nthTriangularNumber (nth, row){
 
 //nthTriangularNumber(8, 1);
 
+
+// 5.) String Splitter
+//   Input: a string and a separator
+//   output: a string separated into an array
+//   recursive input: remainder string, and the separator
+//   recursive output: the split string as an array
+  
+
 let strArray = [];
 
 function stringSplitter(str, separator){
@@ -107,6 +141,15 @@ function stringSplitter(str, separator){
 // stringSplitter('The quick brown fox jumped over the lazy dog.', '');
 // strArray.forEach( i => console.log(i));
 
+
+
+// 6.) Binary Representation
+// Input : a decimal number
+// Output: returns the current binary number
+// recursive input: quotient of decimal number
+// recursive output: the current binary number, the function with the rec. inputs
+
+
 let binary='';
 function binaryRepresentation (decimal){
   if (Math.floor(decimal/2 === 0)){
@@ -120,6 +163,13 @@ function binaryRepresentation (decimal){
 
 // binaryRepresentation(440);
 // console.log(binary);
+
+
+// 7.) Factorial
+// Input: a number
+// Output: the factorial number
+// recursive input: original input number minus 1,
+// recursive output: the input number times 1-input number
 
 let factorialNum= 1;
 
@@ -138,6 +188,17 @@ function factorial (number){
 // factorial(7);
 
 // console.log(factorialNum);
+
+
+  
+// 8.) Fibonacci
+// Input: A number
+// Output: a string of numbers where each number is the sum of the two numbers before it
+// recursive input: original input number
+// recursive output: the current point in the sequence string
+
+
+
 let fibonacciArray = [0,1];
 let position=2;
 function fibonacci (number){
@@ -162,6 +223,12 @@ function fibonacci (number){
 // fibonacci(10);
 // console.log(fibonacciArray);
 
+// 9.) Anagrams
+// Input: A string
+// Output: if string length is 1, return that string in an array
+// recursive input: original input number
+// recursive output: an array of the same string but with characters shuffled around
+
 
 function anagram (str){
 
@@ -185,6 +252,13 @@ function anagram (str){
 // console.log(anagram('tea'));
 
 
+// 10.) Animal Hierarchy
+// Input: An array of objects and a string
+// Output: a cascading object (objects in objects)
+// recursive input:  An array of objects and a string
+// recursive output: a cascading object (objects in objects)
+
+
 const animalHierarchy = [
   {id: 'Animals', parent: null},
   {id: 'Mammals', parent: 'Animals'},
@@ -204,6 +278,13 @@ function traverse(animalHierarchy, parent) {
 }
 // console.log(traverse(animalHierarchy, 'Animals'));
 
+
+
+// 11.) Organization Chart
+// Input: An array of objects and a string
+// Output: a cascading object (objects in objects)
+// recursive input:  An array of objects and a string
+// recursive output: a cascading object (objects in objects)
 
 const facebookHierarchy = [
   {id:'Zuckerberg', boss: null},
@@ -252,4 +333,4 @@ function traverseFacebook(facebookHierarchy, boss) {
   return node;  
 }
 
-console.log(JSON.stringify(traverseFacebook(facebookHierarchy, null), null, 1));
+// console.log(JSON.stringify(traverseFacebook(facebookHierarchy, null), null, 1));
